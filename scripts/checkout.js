@@ -1,13 +1,13 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 //import '../data/backend-practice.js';
-import { loadProducts,loadProductsFetch } from "../data/products.js";
+import { loadProducts,loadProductsFecth } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
 
 async function loadPage(){
   console.log('load page');
 
-  await loadProductsFetch();
+  await loadProductsFecth();
 
   await new Promise((resolve) => {
     loadCart(() => {
@@ -19,8 +19,9 @@ async function loadPage(){
   renderPaymentSummary();
 }
 loadPage();
+/*
 Promise.all([
-  loadProductsFetch(),
+  loadProductsFecth(),
 
  new Promise((resolve) => {
   loadCart(() => {
@@ -32,6 +33,7 @@ Promise.all([
   renderOrderSummary();
   renderPaymentSummary();
 });
+*/
 
 
 /*loadProducts(() => {

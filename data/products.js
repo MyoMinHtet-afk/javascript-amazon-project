@@ -59,7 +59,7 @@ class Clothing extends Product {
 
 export let products= [];
 
-function loadProductsFecth(){
+export function loadProductsFecth(){
   const promise = fetch('https://supersimplebackend.dev/products')
   .then((response) => {
     return response.json();
